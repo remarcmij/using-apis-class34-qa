@@ -8,3 +8,5 @@
 4. Live code a version of the cat walk exercise using promises
 5. Reverse engineer the cat walk promises to callbacks to show "callback hell"
 6. Go through students questions
+
+Advanced Event Loop video: <https://youtu.be/cCOL7MC4Pl0>

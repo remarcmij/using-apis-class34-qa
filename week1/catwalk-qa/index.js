@@ -22,4 +22,4 @@ function main() {
   walk(startPos, stopPos);
 }
 
-window.addEventListener('load', main);
+main();

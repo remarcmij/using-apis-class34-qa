@@ -5,9 +5,8 @@ const STEP_SIZE_PX = 10;
 const DANCE_TIME_MS = 5000;
 const DANCING_CAT_URL =
   'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-const img = document.querySelector('img');
 
-function walk(startPos, stopPos) {
+function walk(img, startPos, stopPos) {
   return new Promise((resolve) => {
     let position = startPos;
     const intervalId = setInterval(() => {
@@ -21,7 +20,7 @@ function walk(startPos, stopPos) {
   });
 }
 
-function dance() {
+function dance(img) {
   return new Promise((resolve) => {
     const savedSrc = img.src;
     img.src = DANCING_CAT_URL;
@@ -33,14 +32,15 @@ function dance() {
 }
 
 function main() {
+  const img = document.querySelector('img');
   const startPos = -img.width;
   const dancePos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
   const catWalk = () => {
-    walk(startPos, dancePos)
-      .then(() => dance())
-      .then(() => walk(dancePos, stopPos))
+    walk(img, startPos, dancePos)
+      .then(() => dance(img))
+      .then(() => walk(img, dancePos, stopPos))
       .then(() => catWalk());
   };
 

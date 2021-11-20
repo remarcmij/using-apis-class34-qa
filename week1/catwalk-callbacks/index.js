@@ -5,9 +5,8 @@ const DANCE_TIME_MS = 5000;
 const STEP_SIZE_PX = 10;
 const DANCING_CAT_URL =
   'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-const img = document.querySelector('img');
 
-function walk(startPos, stopPos, cb) {
+function walk(img, startPos, stopPos, cb) {
   let position = startPos;
   const intervalId = setInterval(() => {
     img.style.left = `${position}px`;
@@ -19,7 +18,7 @@ function walk(startPos, stopPos, cb) {
   }, STEP_INTERVAL_MS);
 }
 
-function dance(cb) {
+function dance(img, cb) {
   const savedSrc = img.src;
   img.src = DANCING_CAT_URL;
   setTimeout(() => {
@@ -29,6 +28,7 @@ function dance(cb) {
 }
 
 function main() {
+  const img = document.querySelector('img');
   const startPos = -img.width;
   const dancePos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
@@ -36,9 +36,9 @@ function main() {
   // prettier-ignore
   const catWalk = () => {
     // callback "hell"
-    walk(startPos, dancePos, 
-      () => dance(
-        () => walk(dancePos, stopPos, 
+    walk(img, startPos, dancePos, 
+      () => dance(img,
+        () => walk(img, dancePos, stopPos, 
           () => catWalk()))
     );
   };

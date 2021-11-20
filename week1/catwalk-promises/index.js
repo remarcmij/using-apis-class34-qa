@@ -31,20 +31,20 @@ function dance(img) {
   });
 }
 
-function main() {
+function catWalk() {
   const img = document.querySelector('img');
   const startPos = -img.width;
   const dancePos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
-  const catWalk = () => {
+  const loop = () => {
     walk(img, startPos, dancePos)
       .then(() => dance(img))
       .then(() => walk(img, dancePos, stopPos))
-      .then(() => catWalk());
+      .then(() => loop());
   };
 
-  catWalk();
+  loop();
 }
 
-window.addEventListener('load', main);
+window.addEventListener('load', catWalk);

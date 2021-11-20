@@ -27,23 +27,23 @@ function dance(img, cb) {
   }, DANCE_TIME_MS);
 }
 
-function main() {
+function catWalk() {
   const img = document.querySelector('img');
   const startPos = -img.width;
   const dancePos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
   // prettier-ignore
-  const catWalk = () => {
+  const loop = () => {
     // callback "hell"
     walk(img, startPos, dancePos, 
       () => dance(img,
         () => walk(img, dancePos, stopPos, 
-          () => catWalk()))
+          () => loop()))
     );
   };
 
-  catWalk();
+  loop();
 }
 
-window.addEventListener('load', main);
+window.addEventListener('load', catWalk);

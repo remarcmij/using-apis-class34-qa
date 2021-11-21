@@ -8,6 +8,7 @@ function fireBullet() {
       setTimeout(() => {
         if (distance === 10) {
           resolve('>>> Bullet hit target');
+          return;
         }
         fly();
       }, 200);

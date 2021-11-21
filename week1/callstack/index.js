@@ -20,18 +20,6 @@ Promise.resolve() // try reject() too
   })
   .then(function then_2() {
     log('then 2');
-  })
-  .catch(function catch_1() {
-    log('catch 1');
-  })
-  .catch(function catch_2() {
-    log('catch 2');
-  })
-  .then(function then_3() {
-    log('then 3');
-  })
-  .finally(function finally_() {
-    log('finally');
   });
 
 log('ending');

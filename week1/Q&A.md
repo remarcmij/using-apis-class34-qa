@@ -16,7 +16,7 @@ One break around 13:15.
 
 Q1: _hello my question is what is the difference between async function and multi-threading ??_
 
-A1:
+A1:Browser that hosts the JavaScript engine is multi-threaded and can do multiple things at the same time.
 
 ## Danijel Cvitkusic
 
@@ -56,7 +56,7 @@ Q1: _In HYF curriculum, a resource mentioned that for asynchronous JavaScript;_
 
 - Using Callbacks is `good`
 - Using Promises is `better`
-- Using Generators is `awesome`
+- Using ~~Generators~~ async/await is `awesome`
 
 _But resources in curriculum focus on Promises. So, do we need to learn it additionally or Promises are enough for us?_
 
@@ -101,3 +101,13 @@ A1:
 Q2: _use the async-await will cancel the roll of promise and callback ?_
 
 A2:
+
+## Daniel Wang
+
+Q1: When a promise is refused, could the promise loop itself until it's resolved? What if a promise couldn't be resolved forever?
+
+## Osama Bazbooz
+
+Q1: Is it mandatory to use setTimeout with promises to make sure that we are settling asynchronously?
+
+Q2: In chaining Multiple Promises, is the execution of the multiple promises going to be sync so the chained multiple promises will execute in the same order?

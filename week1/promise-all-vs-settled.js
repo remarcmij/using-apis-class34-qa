@@ -1,22 +1,16 @@
-function wait(successOrFail = 'success', delay = 0) {
+function wait(message, delay = 0) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (successOrFail === 'success') {
-        return resolve('Success!');
-      }
-      reject(new Error('Failed!'));
+      console.log('resolving', message);
+      resolve(message);
     }, delay);
   });
 }
 
-// const promises1 = [wait(), wait(), wait()];
-// Promise.all(promises1)
-//   .then((results) => {
-//     console.log(results);
-//   })
-//   .catch((err) => {
-//     console.log(err.message);
-//   });
+const promises1 = [wait('first', 10), wait('second', 200), wait('third', 100)];
+Promise.all(promises1).then((results) => {
+  console.log(results);
+});
 
 // const promises2 = [wait(), wait('fail'), wait()];
 // Promise.all(promises2)

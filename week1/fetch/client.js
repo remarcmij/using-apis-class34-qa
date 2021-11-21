@@ -9,8 +9,12 @@ function main() {
     .then((response) => {
       console.log('Response:', response);
     })
-    .catch((err) => {
-      console.log('Error:', err.message);
+    .catch((response) => {
+      console.log('Error:', response.error.message);
+      return fetch(response.url);
+    })
+    .then((response) => {
+      console.log('Response:', response);
     });
 }
 

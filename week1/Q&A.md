@@ -1,4 +1,16 @@
+<!-- cSpell:disable -->
+
 # Q&A Week 1
+
+## Today's Agenda
+
+- How is it going so far?
+- Redo the catwalk exercise, but now with promises.
+- Event loop experiments
+- Promise experiments
+- Go through questions
+
+One break around 13:15.
 
 ## Mohamed Abdelhamed
 

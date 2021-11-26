@@ -1,4 +1,4 @@
-const URL = 'https://api.github.com/orgs/HackYourFuture/repos';
+const URL = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
 async function fetchData(url) {
   const response = await fetch(url);

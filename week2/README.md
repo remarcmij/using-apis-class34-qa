@@ -82,3 +82,91 @@ main();
 ```
 
 **A1**:
+
+### Said
+
+**Q1:** _In the example code piece, while we have `catch` for errors, why new Error is thrown?_
+
+```js
+...
+try {
+    const data = await fetchData();
+    console.log(data);
+  throw new Error('some error message')
+  } catch (error) {
+    console.log(error);
+  }
+...
+
+```
+
+**A1:**
+
+### Ahmed
+
+**Q1:** _After learning async/await , should we ignore or forget using promises and just use async/await or there are cases we must use them ?_
+
+**A1:**
+
+### Lydia
+
+**Q1:** _Is fetch only for api (external Or internal) but if we won't use api we can use normal promise ?!_
+
+**A1:**
+
+**Q2:** _I am still confused with debugging how I can choose where to put breakpoints ?!_
+
+**A2:**
+
+### Mustafa
+
+**Q:**
+
+1. _What's the difference btw promise.all and promise.race?_
+2. _And is it recommended to load data from the desk on functions as loading: (books) for example!_
+3. _And is using Regex a good way to load the data in same format with all the break-lines?_
+4. _Also can we call Async method from Sync one?_
+
+**A:**
+
+### Mohamed
+
+**Q1:** _Hello everyone, I want to know why shall I parse from JSON to javascript however, JSON stands for Java script object notation??_
+
+**A1:**
+
+### Caglar
+
+**Q1:** _Inside code below, although there is a catch block, why do we throw a new error object inside try block? Isn't catch block enough to catch all errors?_
+
+```js
+const getData = async () => {
+  try {
+    const response = await fetch('https://api-to-call.com/endpoint', {
+      method: 'POST',
+      body: JSON.stringify({ id: 200 }),
+    });
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      return jsonResponse;
+    }
+    throw new Error('Request failed!');
+  } catch (error) {
+    console.log(error);
+  }
+};
+```
+
+**A1:**
+
+### Abdulrahman
+
+**Q1:** _What is the different between sequntal and parallel request ? and can we have example about them ?_
+
+**A1:**
+
+### George
+
+**Q1**: _I don’t have questions but I have difficult to find APIs, there is a good website for APIs ?_
+
+**A1:**

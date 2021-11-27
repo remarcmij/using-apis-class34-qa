@@ -9,7 +9,8 @@
 - What new topics did you learn this week?
 - Async/await examples (`async-await.ipynb`)
 - Refactor cat walk with `async/await` (again)
-- Fetch / CORS (`fetch-livecode`)
+- Fetch (`fetch-livecode`)
+- CORS
 - JSON (`json.ipynb`)
 
 Break at 13:15
@@ -29,3 +30,55 @@ Q&A: see below
 **Q2:** _When we need to have chained asynchronous functions, which method is better .. to use .then or use await before calling the async function?_
 
 **A2:**
+
+### Danijel
+
+**Q1:** _At what point should we check/ catch errors when using fetch() and similar async functions. Sometimes I see a fetch wrapped in a try/catch or a .catch() at end of its Promise, but other times the fetch just returns response.json() and lets the calling parent function deal with any errors:_
+
+```js
+const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+
+const fetchData = async () => {
+  // Error check in this function
+  try {
+    const res = await fetch(url);
+
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+const main = async () => {
+  const data = await fetchData();
+  console.log(data);
+};
+
+main();
+```
+
+vs
+
+```js
+const url = 'https://pokeapi.co/api/v2/pokemon/ditto';
+
+const fetchData = async () => {
+  const res = await fetch(url);
+  return res.json();
+};
+
+const main = async () => {
+  // Check for errors here
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.log('Something went wrong');
+  }
+};
+
+main();
+```
+
+**A1**:

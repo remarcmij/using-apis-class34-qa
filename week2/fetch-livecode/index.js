@@ -1,11 +1,35 @@
-const URL = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
+const URL = 'https://pokeapi.co/api/v2/pokemon/?limit=5';
 
-function fetchData(url) {
-  // TODO fetch the data using `fetch` and return a promise
+async function fetchData(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Something went wrong');
+  }
+  return response.json();
+}
+
+function renderData(jsonData) {
+  const root = document.querySelector('#root');
+  const pre = document.createElement('pre');
+  const jsonString = JSON.stringify(jsonData, null, 2);
+  pre.textContent = jsonString;
+  root.appendChild(pre);
+}
+
+function renderError(err) {
+  const root = document.querySelector('#root');
+  const h1 = document.createElement('h1');
+  h1.textContent = err.message;
+  root.appendChild(h1);
 }
 
 async function main() {
-  // TODO call `fetchData()` and render the returned data (or error)
+  try {
+    const pokemons = await fetchData(URL);
+    renderData(pokemons);
+  } catch (err) {
+    renderError(err);
+  }
 }
 
 window.addEventListener('load', main);

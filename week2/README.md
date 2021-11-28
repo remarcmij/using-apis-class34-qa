@@ -93,7 +93,9 @@ main();
 try {
     const data = await fetchData();
     console.log(data);
-  throw new Error('some error message')
+    if (data.pokemon) {
+      throw new Error('some error message')
+    }
   } catch (error) {
     console.log(error);
   }
@@ -124,7 +126,7 @@ try {
 **Q:**
 
 1. _What's the difference btw promise.all and promise.race?_
-2. _And is it recommended to load data from the desk on functions as loading: (books) for example!_
+2. _And is it recommended to load data from the disk on functions as loading: (books) for example!_
 3. _And is using Regex a good way to load the data in same format with all the break-lines?_
 4. _Also can we call Async method from Sync one?_
 
@@ -154,6 +156,7 @@ const getData = async () => {
     throw new Error('Request failed!');
   } catch (error) {
     console.log(error);
+    throw error;
   }
 };
 ```

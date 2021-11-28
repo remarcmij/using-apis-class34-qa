@@ -27,6 +27,9 @@ async function main() {
   try {
     const jsonData = await fetchData(URL);
     renderData(jsonData);
+    const promises = jsonData.results.map((result) => fetchData(result.url));
+    const results = await Promise.all(promises);
+    console.log(results);
   } catch (err) {
     renderError(err);
   }

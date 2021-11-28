@@ -34,14 +34,14 @@ function dance(img) {
 function catWalk() {
   const img = document.querySelector('img');
   const startPos = -img.width;
-  const dancePos = (window.innerWidth - img.width) / 2;
+  const centerPos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
   // TODO convert to async/await
   const loop = () => {
-    walk(img, startPos, dancePos)
+    walk(img, startPos, centerPos)
       .then(() => dance(img))
-      .then(() => walk(img, dancePos, stopPos))
+      .then(() => walk(img, centerPos, stopPos))
       .then(() => loop());
   };
 

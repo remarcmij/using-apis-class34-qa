@@ -7,6 +7,7 @@
 - How did the homework (week 1) go?
   - Revisit promises from week 1 (`promises.ipynb`, `bullet.js`)
 - What new topics did you learn this week?
+  - async/await, try/catch, fetch API, JSON, xmlHttpRequest, GET and POST methods
 - Async/await examples (`async-await.ipynb`)
 - Refactor cat walk with `async/await` (again)
 - Fetch (`fetch-livecode`)
@@ -212,5 +213,11 @@ xhr.setRequestHeader('Content-type', 'application/json');
 ### Daniel
 
 **Q1:** _In the online class we learn to fetch from API we need Step 1. response.json(), 2. get data 3. catch error. I know what I need to do, but could you tell me what response.json() is?_
+
+**A1:**
+
+### Alexander
+
+**Q1:** _I know it won't count as a valid question, but what exactly is the headings in POST request?_
 
 **A1:**

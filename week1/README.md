@@ -12,6 +12,8 @@
 
 One break around 13:15.
 
+Advanced Event Loop video: <https://youtu.be/cCOL7MC4Pl0>
+
 ## Mohamed
 
 Q1: _hello my question is what is the difference between async function and multi-threading ??_

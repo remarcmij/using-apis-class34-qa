@@ -25,7 +25,7 @@ Q&A: see below
 
 **A1:** Yes, the unit test expects a function declaration instead of an arrow function. Normally unit tests should not be concerned with such implementation details, i.e. whether a function is defined using a function declaration or as an arrow function. The unit tests for the homework however are designed to give warnings about possible implementation errors (for educational purposes). In this case the unit test did not cater for the possibility that the function declaration was changed into an arrow function as the instructions ask you to complete the function rather than to change the way its declared. From the point of the exercise (and its unit test) it is an uncalled for, unnecessary and evidently breaking change. I would recommend that you revert back to a function declaration so that the unit test passes.
 
-> When making changes in a PR to code that is not your own, you are well advised to restrict yourself to just the required functional modifications. Don't make changes to code that does not need changes simply because you perhaps don't like the style or something similar. You may break things and/or provoke WTF comments from the code owner/reviewer (who may decide to reject your PR for that reason). _Just to be clear, this was **not** the case here_.
+> When making changes in a PR to code that is not your own, you are well advised to restrict yourself to just the required functional modifications. Don't make changes to code that does not need changes simply because you perhaps don't like the style or something like that. You may break things and/or provoke WTF comments from the code owner/reviewer (who may decide to reject your PR for that reason). _Just to be clear, this was **not** the case here_.
 
 **Q2:** _When we need to have chained asynchronous functions, which method is better .. to use .then or use await before calling the async function?_
 
@@ -174,6 +174,25 @@ const getData = async () => {
 ### Osama
 
 **Q1:** _As we can see in the diagram of making XHR Get Request why we process the handler response before opening and sending a request?_
+
+```js
+function fetchData(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.responseType = 'json';
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status <= 299) {
+        resolve(xhr.response);
+      } else {
+        reject(new Error(`Network error: ${xhr.status} - ${xhr.statusText}`));
+      }
+    };
+    xhr.onerror = () => reject(new Error('Network request failed'));
+    xhr.send();
+  });
+}
+```
 
 **A1:**
 

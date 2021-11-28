@@ -4,8 +4,8 @@
 
 ## Today's Agenda
 
-- Questions remaining from week 1 homework
-- Revisit promises from week 1 (`promises.ipynb`, `bullet.js`)
+- How did the homework (week 1) go?
+  - Revisit promises from week 1 (`promises.ipynb`, `bullet.js`)
 - What new topics did you learn this week?
 - Async/await examples (`async-await.ipynb`)
 - Refactor cat walk with `async/await` (again)
@@ -19,19 +19,19 @@ Q&A: see below
 
 ## Q&A
 
-### Christina
+### Christina (Yash)
 
 **Q1:** _Hey everyone, my question is regarding ex1 of week2 homework. When I tried to write the following function as an arrow function, the npm test failed to recognize the async function. I'm not sure if that happened because of the way the test file was written or there is something more to it?_
 
 **A1:** Yes, the unit test expects a function declaration instead of an arrow function. Normally unit tests should not be concerned with such implementation details, i.e. whether a function is defined using a function declaration or as an arrow function. The unit tests for the homework however are designed to give warnings about possible implementation errors (for educational purposes). In this case the unit test did not cater for the possibility that the function declaration was changed into an arrow function as the instructions ask you to complete the function rather than to change the way its declared. From the point of the exercise (and its unit test) it is an uncalled for, unnecessary and evidently breaking change. I would recommend that you revert back to a function declaration so that the unit test passes.
 
-> When making changes in a PR to code that is not your own, you are well advised to restrict yourself to just the required functional modifications. Don't make changes to code that does not need changes simply because you perhaps don't like the style or something like that. You may break things and/or provoke WTF comments from the code owner/reviewer (who may decide to reject your PR for that reason). _Just to be clear, this was **not** the case here_.
+> When making changes through a PR to a repo that is not your own, you are well advised to restrict yourself to just the required functional modifications. Don't make changes to code that does not need changes simply because you perhaps don't like the style or something like that. You may break things and/or provoke WTF comments from the code owner/reviewer (who may decide to reject your PR for that reason). _Just to be clear, this was **not** the case here_.
 
 **Q2:** _When we need to have chained asynchronous functions, which method is better .. to use .then or use await before calling the async function?_
 
 **A2:**
 
-### Danijel
+### Danijel (Yash)
 
 **Q1:** _At what point should we check/ catch errors when using fetch() and similar async functions. Sometimes I see a fetch wrapped in a try/catch or a .catch() at end of its Promise, but other times the fetch just returns response.json() and lets the calling parent function deal with any errors:_
 
@@ -108,7 +108,7 @@ try {
 
 **A1:**
 
-### Lydia
+### Lydia (Yash)
 
 **Q1:** _Is fetch only for api (external Or internal) but if we won't use api we can use normal promise ?!_
 
@@ -118,7 +118,7 @@ try {
 
 **A2:**
 
-### Mustafa
+### Mustafa (Yash)
 
 **Q:**
 
@@ -159,19 +159,19 @@ const getData = async () => {
 
 **A1:**
 
-### Abdulrahman
+### Abdulrahman (Yash)
 
 **Q1:** _What is the different between sequntal and parallel request ? and can we have example about them ?_
 
 **A1:**
 
-### George
+### George (Yash)
 
 **Q1**: _I don't have questions but I have difficult to find APIs, there is a good website for APIs ?_
 
 **A1:**
 
-### Osama
+### Osama (Yash)
 
 **Q1:** _As we can see in the diagram of making XHR Get Request why we process the handler response before opening and sending a request?_
 

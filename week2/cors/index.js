@@ -18,9 +18,9 @@ function renderData(jsonData) {
 
 function renderError(err) {
   const root = document.querySelector('#root');
-  const p = document.createElement('h1');
-  p.textContent = err.message;
-  root.appendChild(p);
+  const h1 = document.createElement('h1');
+  h1.textContent = err.message;
+  root.appendChild(h1);
 }
 
 async function main() {

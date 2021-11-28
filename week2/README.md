@@ -167,6 +167,31 @@ const getData = async () => {
 
 ### George
 
-**Q1**: _I don’t have questions but I have difficult to find APIs, there is a good website for APIs ?_
+**Q1**: _I don't have questions but I have difficult to find APIs, there is a good website for APIs ?_
+
+**A1:**
+
+### Osama
+
+**Q1:** _As we can see in the diagram of making XHR Get Request why we process the handler response before opening and sending a request?_
+
+**A1:**
+
+**Q2:** _Why we do convert a value to a JSON string and then we send the data to a server as we can see in the diagram bellow. I didn't get the idea of doing that!_
+
+**A2:**
+
+**Q3:** _it's not really clear for me why we use "setRequestHeader" when we are doing XHR Post Requests_
+
+```js
+xhr.setRequestHeader('apikey', apiKey);
+xhr.setRequestHeader('Content-type', 'application/json');
+```
+
+**A3:**
+
+### Daniel
+
+**Q1:** _In the online class we learn to fetch from API we need Step 1. response.json(), 2. get data 3. catch error. I know what I need to do, but could you tell me what response.json() is?_
 
 **A1:**

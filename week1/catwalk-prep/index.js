@@ -35,7 +35,6 @@ function catWalk() {
   // 2. Then dance for 5 secs.
   // 3. Then walk from `centerPos` to `stopPos`.
   // 4. Repeat the first three steps indefinitely.
-  // Use the
 }
 
 window.addEventListener('load', catWalk);

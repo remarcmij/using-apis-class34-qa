@@ -20,7 +20,7 @@ function dance(img) {
     // Switch the `.src` of the `img` from the walking cat to the dancing cat
     // and, after a timeout, reset the `img` back to the walking cat. Then
     // resolve the promise.
-    // Make good use of the `DANCING_CAT_URL` constant.
+    // Make good use of the `DANCING_CAT_URL` and `DANCE_TIME_MS` constants.
   });
 }
 

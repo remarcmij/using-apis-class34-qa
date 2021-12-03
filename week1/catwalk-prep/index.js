@@ -30,11 +30,12 @@ function catWalk() {
   const centerPos = (window.innerWidth - img.width) / 2;
   const stopPos = window.innerWidth;
 
-  // Let the cat do the following:
+  // Use the `walk()` and `dance()` functions to let the cat do the following:
   // 1. Walk from `startPos` to `centerPos`.
   // 2. Then dance for 5 secs.
   // 3. Then walk from `centerPos` to `stopPos`.
   // 4. Repeat the first three steps indefinitely.
+  // Use the
 }
 
 window.addEventListener('load', catWalk);

@@ -32,9 +32,9 @@ function catWalk() {
 
   // Let the cat do the following:
   // 1. Walk from `startPos` to `centerPos`.
-  // 2. Dance 5 secs
-  // 3. Walk from `centerPos` to `stopPos`
-  // 4. Repeat the previous steps forever.
+  // 2. Then dance for 5 secs.
+  // 3. Then walk from `centerPos` to `stopPos`.
+  // 4. Repeat the first three steps indefinitely.
 }
 
 window.addEventListener('load', catWalk);
